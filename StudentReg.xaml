@@ -1,0 +1,31 @@
+﻿<Page x:Class="QuizManagement.StudentReg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:QuizManagement"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="StudentReg" Height="768" Width="1366" Background="White">
+
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="520" Margin="0,277,0,0" VerticalAlignment="Top" Width="788" Source="/3.jpg"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="513,77,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Center" Margin="0,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="36"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="513,163,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Center" Margin="0,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="36"/>
+        <Label Content="Возраст" HorizontalAlignment="Left" Margin="513,251,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Center" Margin="0,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="36"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="513,337,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14"/>
+        <TextBox x:Name="txtLogin" HorizontalAlignment="Center" Margin="0,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="36"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="513,419,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="14"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,449,0,0" VerticalAlignment="Top" Width="340" Height="36"/>
+        <Button x:Name="btnReg" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,537,0,0" VerticalAlignment="Top" Width="340" Height="36" Background="LimeGreen" FontSize="18" FontWeight="Bold" Click="btnRegStudent_Click"/>
+        <Button Style="{StaticResource CActionButtons}" HorizontalAlignment="Left" Margin="1258,16,0,712" ToolTip="Back" Name="btnBack" Click="btnBack_Click">
+            <StackPanel Margin="-5">
+                <materialDesign:PackIcon Kind="ArrowLeft" Width="20" Height="20" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

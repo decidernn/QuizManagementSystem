@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище QuizManagementSystemModelContainer" CdmEntityContainer="QuizManagementSytemEntities">
+    <EntitySetMapping Name="Learner">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.Learner">
+        <MappingFragment StoreEntitySet="Learner">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LearnerSurname" ColumnName="LearnerSurname" />
+          <ScalarProperty Name="LearnerName" ColumnName="LearnerName" />
+          <ScalarProperty Name="LearnerAge" ColumnName="LearnerAge" />
+          <ScalarProperty Name="LearnerLogin" ColumnName="LearnerLogin" />
+          <ScalarProperty Name="LearnerPassword" ColumnName="LearnerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LearnerResult">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.LearnerResult">
+        <MappingFragment StoreEntitySet="LearnerResult">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDLearner" ColumnName="IDLearner" />
+          <ScalarProperty Name="IDResult" ColumnName="IDResult" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizer">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.Organizer">
+        <MappingFragment StoreEntitySet="Organizer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganizerSurname" ColumnName="OrganizerSurname" />
+          <ScalarProperty Name="OrganizerName" ColumnName="OrganizerName" />
+          <ScalarProperty Name="OrganizerLogin" ColumnName="OrganizerLogin" />
+          <ScalarProperty Name="OrganizerPassword" ColumnName="OrganizerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDLearner" ColumnName="IDLearner" />
+          <ScalarProperty Name="IDOrganizer" ColumnName="IDOrganizer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.Questions">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QSET" ColumnName="QSET" />
+          <ScalarProperty Name="QNO" ColumnName="QNO" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="OptionA" ColumnName="OptionA" />
+          <ScalarProperty Name="OptionB" ColumnName="OptionB" />
+          <ScalarProperty Name="OptionC" ColumnName="OptionC" />
+          <ScalarProperty Name="OptionD" ColumnName="OptionD" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Result">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.Result">
+        <MappingFragment StoreEntitySet="Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDQuestions" ColumnName="IDQuestions" />
+          <ScalarProperty Name="MarkObtained" ColumnName="MarkObtained" />
+          <ScalarProperty Name="CountQuestions" ColumnName="CountQuestions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QuizManagementSystemModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

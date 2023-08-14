@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище QuizManagementSystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Learner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LearnerSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LearnerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LearnerAge" Type="int" Nullable="false" />
+    <Property Name="LearnerLogin" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LearnerPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LearnerResult">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDLearner" Type="int" Nullable="false" />
+    <Property Name="IDResult" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Organizer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrganizerSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizerLogin" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrganizerPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDLearner" Type="int" />
+    <Property Name="IDOrganizer" Type="int" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QSET" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="QNO" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Question" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="OptionA" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="OptionB" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="OptionC" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="OptionD" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Answer" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDQuestions" Type="int" Nullable="false" />
+    <Property Name="MarkObtained" Type="int" Nullable="false" />
+    <Property Name="CountQuestions" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_LearnerResult_Learner">
+    <End Role="Learner" Type="Self.Learner" Multiplicity="1" />
+    <End Role="LearnerResult" Type="Self.LearnerResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Learner">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LearnerResult">
+        <PropertyRef Name="IDLearner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LearnerResult_Result">
+    <End Role="Result" Type="Self.Result" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LearnerResult" Type="Self.LearnerResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Result">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LearnerResult">
+        <PropertyRef Name="IDResult" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Learner">
+    <End Role="Learner" Type="Self.Learner" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Learner">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="IDLearner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Organizer">
+    <End Role="Organizer" Type="Self.Organizer" Multiplicity="0..1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="IDOrganizer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Result_Question">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Result" Type="Self.Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="IDQuestions" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище QuizManagementSystemModelContainer">
+    <EntitySet Name="Learner" EntityType="Self.Learner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LearnerResult" EntityType="Self.LearnerResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organizer" EntityType="Self.Organizer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_LearnerResult_Learner" Association="Self.FK_LearnerResult_Learner">
+      <End Role="Learner" EntitySet="Learner" />
+      <End Role="LearnerResult" EntitySet="LearnerResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LearnerResult_Result" Association="Self.FK_LearnerResult_Result">
+      <End Role="Result" EntitySet="Result" />
+      <End Role="LearnerResult" EntitySet="LearnerResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Learner" Association="Self.FK_Person_Learner">
+      <End Role="Learner" EntitySet="Learner" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Organizer" Association="Self.FK_Person_Organizer">
+      <End Role="Organizer" EntitySet="Organizer" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Result_Question" Association="Self.FK_Result_Question">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Result" EntitySet="Result" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

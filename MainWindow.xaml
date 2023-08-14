@@ -1,0 +1,20 @@
+﻿<Window x:Class="QuizManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QuizManagement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1366" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="White" ResizeMode="NoResize">
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden" Grid.Row="1" Name ="MainFrame"/>
+        <Button x:Name="btnStart" Content="НАЧАТЬ" HorizontalAlignment="Center" Margin="0,384,0,0" VerticalAlignment="Top" Height="82" Width="482" Click="Button_Click" FontFamily="Century Gothic" FontSize="28" FontWeight="Bold" Background="LimeGreen"/>
+        <Button Style="{StaticResource CActionButtons}" HorizontalAlignment="Right" Margin="0,16,16,712" ToolTip="Close" x:Name="btnClose" Click="btnClose_Click">
+            <StackPanel Margin="-5">
+                <materialDesign:PackIcon Kind="Close" Width="20" Height="20" />
+            </StackPanel>
+        </Button>
+        <Label x:Name="label1" Content="Welcome to the QUIZ" HorizontalAlignment="Center" Margin="0,219,0,0" VerticalAlignment="Top" Height="97" Width="758" FontFamily="Century Gothic" FontSize="72" FontWeight="Bold"/>
+    </Grid>
+</Window>

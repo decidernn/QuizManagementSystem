@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="QuizManagement.Teacher_UC.UC_Quiz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:QuizManagement.Teacher_UC"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366"
+             Height="768" Width="1366" Background="White">
+    <Grid>
+        <Label x:Name="lblQuestion" Content="Вопрос" HorizontalAlignment="Left" Margin="342,128,0,0" VerticalAlignment="Top" Height="104" Width="768" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold"/>
+        <RadioButton x:Name="rb1" Content="Ответ1" HorizontalAlignment="Left" Margin="167,266,0,0" VerticalAlignment="Top" Height="68" Width="1189" FontFamily="Century Gothic" FontSize="18"/>
+        <RadioButton x:Name="rb2" Content="Ответ2" HorizontalAlignment="Left" Margin="167,347,0,0" VerticalAlignment="Top" Height="68" Width="1189" FontFamily="Century Gothic" FontSize="18"/>
+        <RadioButton x:Name="rb3" Content="Ответ3" HorizontalAlignment="Left" Margin="167,430,0,0" VerticalAlignment="Top" Height="68" Width="1189" FontFamily="Century Gothic" FontSize="18"/>
+        <RadioButton x:Name="rb4" Content="Ответ4" HorizontalAlignment="Left" Margin="167,511,0,0" VerticalAlignment="Top" Height="68" Width="1189" FontFamily="Century Gothic" FontSize="18"/>
+        <Button x:Name="btnConfitrm" Content="Подтвердить" HorizontalAlignment="Left" Margin="1005,638,0,0" VerticalAlignment="Top" Height="82" Width="306" FontFamily="Century Gothic" FontSize="16" FontWeight="Bold" Click="btnConfitrm_Click"/>
+        <Label x:Name="lblQuestionNumber" Content="Вопрос: 1/x" HorizontalAlignment="Left" Margin="43,67,0,0" VerticalAlignment="Top" Height="43" Width="178" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.329,0.285"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ceaaedaaeda450fbc5f697e6faf8b98" Name="Diagram1">
+        <EntityTypeShape EntityType="QuizManagementSystemModel.Learner" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizManagementSystemModel.LearnerResult" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizManagementSystemModel.Organizer" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizManagementSystemModel.Person" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizManagementSystemModel.Questions" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizManagementSystemModel.Result" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizManagementSystemModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QuizManagementSystemModel.FK_LearnerResult_Learner" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizManagementSystemModel.FK_Person_Learner" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizManagementSystemModel.FK_LearnerResult_Result" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizManagementSystemModel.FK_Person_Organizer" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizManagementSystemModel.FK_Result_Question" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
